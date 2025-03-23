@@ -23,6 +23,10 @@ export class AppComponent {
 
   toggleTask(index: number) {
     this.tasks[index].completed = !this.tasks[index].completed;
+    this.tasks = [
+      ...this.tasks.filter((task) => !task.completed),
+      ...this.tasks.filter((task) => task.completed),
+    ];
   }
 
   removeTask(index: number) {
